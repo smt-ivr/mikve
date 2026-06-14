@@ -302,7 +302,7 @@ export async function processIvrFlow(clientData, params, token, env) {
     const payRes = await executePayment(paymentPayload, finalAmountAgorot, params, actualClientId, token, env);
 
     if (payRes.isSuccess) {
-      return `id_list_message=t-בוצע בהצלחה תשלום.t-עבור.${actionName}.t-על סך.n-${finalAmountAgorot / 100}.t-שקלים`;
+      return `id_list_message=t-בוצע בהצלחה תשלום.t-עבור.t-${actionName}.t-על סך.n-${finalAmountAgorot / 100}.t-שקלים`;
     } else {
       const nextRetryIdx = fail_retries.length + 1;
       
